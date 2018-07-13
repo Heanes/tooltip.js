@@ -296,7 +296,7 @@
                 if(_this.inState.show){
                     var $target = $(event.target);
                     var tipUId = _this.getTipUId();
-                    if($target.is(_this.$element) && $target.is($tip) && $target.closest('#' + tipUId).is($tip)){
+                    if(!$target.is(_this.$element) && !$target.is($tip) && !$target.closest('#' + tipUId).is($tip)){
                         if(_this.inState.tipClick){
                             _this.inState.tipClick = false;
                             _this.inState.keepShow = false;
