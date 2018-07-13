@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="Heanes heanes.com email(heanes@163.com)">
+    <meta name="keywords" content="软件,商务,HTML,tutorials,source codes">
+    <meta name="description" content="描述">
+    <title>Tooltip示例</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="//cdn.heanes.com/public/static/image/favicon/favicon.ico"/>
+    <link rel="bookmark" href="//cdn.heanes.com/public/static/image/favicon/favicon.ico"/>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="//ui.heanes.com/dist/css/heanesUI.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/tooltip.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.heanes.com/css/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+<div class="main">
+    <div class="demo-wrap">
+        <div class="demo-title"><h1>Tooltip示例</h1></div>
+        <div class="demo-desc">
+            <p class="desc">展示额外信息的tooltip。</p>
+        </div>
+        <div class="demo-group">
+            <div class="demo-group-title">
+                <h2>不同位置</h2>
+            </div>
+            <div class="demo-desc">
+                <p class="desc">tooltip可以展示在不同的位置</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-item">
+                    <button class="btn btn-primary" id="showAllTooltipBtn">显示全部tooltip</button>
+                </div>
+                <div class="demo-item demo-item-tooltip demo-tooltip-placement">
+                    <button class="btn btn-success tooltip tooltip-top" title="中上方tooltip" data-tooltip-placement="top">中上方</button>
+                    <button class="btn btn-success tooltip tooltip-bottom" title="中下方tooltip" data-tooltip-placement="bottom">中下方</button>
+                    <button class="btn btn-success tooltip tooltip-left" title="左侧tooltip" data-tooltip-placement="left">左侧</button>
+                    <button class="btn btn-success tooltip tooltip-right" title="右侧tooltip" data-tooltip-placement="right">右侧</button>
+                    <button class="btn btn-success tooltip tooltip-top-left" title="左上方tooltip" data-tooltip-placement="top-left">左上方</button>
+                    <button class="btn btn-success tooltip tooltip-top-right" title="右上方tooltip" data-tooltip-placement="top-right">右上方</button>
+                    <button class="btn btn-success tooltip tooltip-bottom-left" title="左下方tooltip" data-tooltip-placement="bottom-left">左下方</button>
+                    <button class="btn btn-success tooltip tooltip-bottom-right" title="右下方tooltip" data-tooltip-placement="bottom-right">右下方</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-group">
+            <div class="demo-group-title"><h2>位置偏移</h2></div>
+            <div class="demo-desc">
+                <p class="desc">可以指定位置偏移。</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-item demo-item-tooltip demo-tooltip-opacity">
+                    <button type="button" class="btn btn-primary tooltip-offset-1" title="向上偏移10像素">向上偏移10像素</button>
+                    <button type="button" class="btn btn-primary tooltip-offset-2" title="向下偏移10像素">向下偏移10像素</button>
+                    <button type="button" class="btn btn-primary tooltip-offset-3" title="向左偏移30像素">向左偏移30像素</button>
+                    <button type="button" class="btn btn-primary tooltip-offset-4" title="向右偏移30像素">向右偏移30像素</button>
+                    <button type="button" class="btn btn-primary tooltip-offset-5" title="向右偏移30向下偏移10像素">向右偏移30向下偏移10像素</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-group">
+            <div class="demo-group-title">
+                <h2>保持显示</h2>
+            </div>
+            <div class="demo-desc">
+                <p class="desc">tooltip可以展示在不同的位置</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-item demo-item-tooltip demo-tooltip-placement">
+                    <button class="btn btn-success tooltip" title="点击一下tooltip保持显示，再点击一下取消一直显示">点击一下tooltip保持显示，再点击一下取消一直显示</button>
+                    <button class="btn btn-success tooltip" title="tooltip保持显示点击其他区域取消一直显示">tooltip保持显示后点击其他区域取消一直显示</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-group">
+            <div class="demo-group-title"><h2>透明度</h2></div>
+            <div class="demo-desc">
+                <p class="desc">不同的透明度。</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-item demo-item-tooltip demo-tooltip-opacity">
+                    <button type="button" class="btn btn-primary tooltip" title="90%透明度" data-tooltip-opacity=".8">90%透明度</button>
+                    <button type="button" class="btn btn-primary tooltip" title="80%透明度" data-tooltip-opacity=".8">80%透明度</button>
+                    <button type="button" class="btn btn-primary tooltip" title="70%透明度" data-tooltip-opacity=".7">70%透明度</button>
+                    <button type="button" class="btn btn-primary tooltip" title="60%透明度" data-tooltip-opacity=".6">60%透明度</button>
+                    <button type="button" class="btn btn-primary tooltip" title="50%透明度" data-tooltip-opacity=".5">50%透明度</button>
+                    <button type="button" class="btn btn-primary tooltip" title="40%透明度" data-tooltip-opacity=".4">40%透明度</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-group">
+            <div class="demo-group-title"><h2>动画效果</h2></div>
+            <div class="demo-desc">
+                <p class="desc">不仅仅只淡入淡出，还可以指定不同的动画效果。注意这里需要引入animate.css或者提前定义好对应的动画样式的</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-item demo-item-tooltip demo-tooltip-opacity">
+                    <button type="button" class="btn btn-primary tooltip-animation-1" title="bounce效果">bounce</button>
+                    <button type="button" class="btn btn-primary tooltip-animation-2" title="wobble效果">wobble</button>
+                    <button type="button" class="btn btn-primary tooltip-animation-3" title="bounceIn效果">bounceIn</button>
+                    <button type="button" class="btn btn-primary tooltip-animation-4" title="shake效果">shake</button>
+                    <button type="button" class="btn btn-primary tooltip-animation-5" title="jello效果">jello</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-group">
+            <div class="demo-group-title"><h2>不同风格</h2></div>
+            <div class="demo-desc">
+                <p class="desc">可以定义不同的风格样式。你也可以自己用css定制不同的风格样式。</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-item demo-item-tooltip demo-tooltip-theme">
+                    <button type="button" class="btn btn-primary tooltip-theme-1" title="白色tooltip">白色tooltip</button>
+                    <button type="button" class="btn btn-primary tooltip-theme-2" title="蓝色tooltip">蓝色tooltip</button>
+                    <button type="button" class="btn btn-primary tooltip-theme-3" title="绿色tooltip">绿色tooltip</button>
+                    <button type="button" class="btn btn-primary tooltip-theme-4" title="黄色tooltip">黄色tooltip</button>
+                    <button type="button" class="btn btn-primary tooltip-theme-5" title="红色tooltip">红色tooltip</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="script-resource">
+    <script type="text/javascript" src="../static/vendor/js/jquery/2.2.4/jquery.2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../src/js/tooltip.js"></script>
+    <script type="text/javascript" src="../static/js/demo.js"></script>
+</div>
+</body>
+</html>

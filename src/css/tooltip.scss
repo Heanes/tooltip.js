@@ -1,0 +1,403 @@
+@charset "UTF-8";
+/**
+ * @doc tooltip Style
+ * @author Heanes
+ * @time 2018-06-07 11:27:07 周四
+ */
+$bgColor: #000;
+$color: #fff;
+$padding: 5px;
+$boxShadow: 0 0 9px 1px #d2d2d2;
+
+$contentPadding: 4px 8px;
+$contentBorderRadius: 4px;
+$fontSize: 13px;
+.tooltip-wrap.default{
+    position:absolute;
+    display:none;
+    padding:$padding;
+
+    /* 展示内容 */
+    .tooltip-inner{
+        background-color:$bgColor;
+        padding:$contentPadding;
+        border-radius:$contentBorderRadius;
+        color:$color;
+        font-size:$fontSize;
+        box-shadow:$boxShadow;
+    }
+
+    /* 下面的三角 */
+    .tooltip-arrow{
+        position:absolute;
+        width:0;
+        height:0;
+        border:solid transparent;
+    }
+
+    &.top, &.top-center, &.top-left, &.top-right{
+        .tooltip-arrow{
+            bottom:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:5px 5px 0;
+            border-top-color:$bgColor;
+        }
+    }
+    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+        .tooltip-arrow{
+            top:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:0 5px 5px;
+            border-bottom-color:$bgColor;
+        }
+    }
+    // 向右
+    &.left{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            right:0;
+            border-width:5px 0 5px 5px;
+            border-left-color:$bgColor;
+        }
+    }
+
+    &.right{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            left:0;
+            border-width:5px 5px 5px 0;
+            border-right-color:$bgColor;
+        }
+    }
+}
+
+
+$bgColor: #fff;
+$color: #333;
+$boxShadow: 0 0 9px 1px #d2d2d2;
+.tooltip-wrap.white{
+    position:absolute;
+    display:none;
+    padding:$padding;
+
+    /* 展示内容 */
+    .tooltip-inner{
+        background-color:$bgColor;
+        padding:$contentPadding;
+        border-radius:$contentBorderRadius;
+        color:$color;
+        font-size:$fontSize;
+        box-shadow:$boxShadow;
+    }
+
+    /* 下面的三角 */
+    .tooltip-arrow{
+        position:absolute;
+        width:0;
+        height:0;
+        border:solid transparent;
+    }
+
+    &.top, &.top-center, &.top-left, &.top-right{
+        .tooltip-arrow{
+            bottom:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:5px 5px 0;
+            border-top-color:$bgColor;
+        }
+    }
+    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+        .tooltip-arrow{
+            top:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:0 5px 5px;
+            border-bottom-color:$bgColor;
+        }
+    }
+    // 向右
+    &.left{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            right:0;
+            border-width:5px 0 5px 5px;
+            border-left-color:$bgColor;
+        }
+    }
+
+    &.right{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            left:0;
+            border-width:5px 5px 5px 0;
+            border-right-color:$bgColor;
+        }
+    }
+}
+
+$bgColor:#428bca;
+$color:#fff;
+.tooltip-wrap.primary{
+    position:absolute;
+    display:none;
+    padding:$padding;
+
+    /* 展示内容 */
+    .tooltip-inner{
+        background-color:$bgColor;
+        padding:$contentPadding;
+        border-radius:$contentBorderRadius;
+        color:$color;
+        font-size:$fontSize;
+        box-shadow:$boxShadow;
+    }
+
+    /* 下面的三角 */
+    .tooltip-arrow{
+        position:absolute;
+        width:0;
+        height:0;
+        border:solid transparent;
+    }
+
+    &.top, &.top-center, &.top-left, &.top-right{
+        .tooltip-arrow{
+            bottom:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:5px 5px 0;
+            border-top-color:$bgColor;
+        }
+    }
+    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+        .tooltip-arrow{
+            top:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:0 5px 5px;
+            border-bottom-color:$bgColor;
+        }
+    }
+    // 向右
+    &.left{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            right:0;
+            border-width:5px 0 5px 5px;
+            border-left-color:$bgColor;
+        }
+    }
+
+    &.right{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            left:0;
+            border-width:5px 5px 5px 0;
+            border-right-color:$bgColor;
+        }
+    }
+}
+
+$bgColor:#5cb85c;
+$color:#fff;
+.tooltip-wrap.info{
+    position:absolute;
+    display:none;
+    padding:$padding;
+
+    /* 展示内容 */
+    .tooltip-inner{
+        background-color:$bgColor;
+        padding:$contentPadding;
+        border-radius:$contentBorderRadius;
+        color:$color;
+        font-size:$fontSize;
+        box-shadow:$boxShadow;
+    }
+
+    /* 下面的三角 */
+    .tooltip-arrow{
+        position:absolute;
+        width:0;
+        height:0;
+        border:solid transparent;
+    }
+
+    &.top, &.top-center, &.top-left, &.top-right{
+        .tooltip-arrow{
+            bottom:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:5px 5px 0;
+            border-top-color:$bgColor;
+        }
+    }
+    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+        .tooltip-arrow{
+            top:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:0 5px 5px;
+            border-bottom-color:$bgColor;
+        }
+    }
+    // 向右
+    &.left{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            right:0;
+            border-width:5px 0 5px 5px;
+            border-left-color:$bgColor;
+        }
+    }
+
+    &.right{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            left:0;
+            border-width:5px 5px 5px 0;
+            border-right-color:$bgColor;
+        }
+    }
+}
+
+$bgColor:#f0ad4e;
+$color:#fff;
+.tooltip-wrap.warn{
+    position:absolute;
+    display:none;
+    padding:$padding;
+
+    /* 展示内容 */
+    .tooltip-inner{
+        background-color:$bgColor;
+        padding:$contentPadding;
+        border-radius:$contentBorderRadius;
+        color:$color;
+        font-size:$fontSize;
+        box-shadow:$boxShadow;
+    }
+
+    /* 下面的三角 */
+    .tooltip-arrow{
+        position:absolute;
+        width:0;
+        height:0;
+        border:solid transparent;
+    }
+
+    &.top, &.top-center, &.top-left, &.top-right{
+        .tooltip-arrow{
+            bottom:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:5px 5px 0;
+            border-top-color:$bgColor;
+        }
+    }
+    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+        .tooltip-arrow{
+            top:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:0 5px 5px;
+            border-bottom-color:$bgColor;
+        }
+    }
+    // 向右
+    &.left{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            right:0;
+            border-width:5px 0 5px 5px;
+            border-left-color:$bgColor;
+        }
+    }
+
+    &.right{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            left:0;
+            border-width:5px 5px 5px 0;
+            border-right-color:$bgColor;
+        }
+    }
+}
+
+$bgColor:#d9534f;
+$color:#fff;
+.tooltip-wrap.danger{
+    position:absolute;
+    display:none;
+    padding:$padding;
+
+    /* 展示内容 */
+    .tooltip-inner{
+        background-color:$bgColor;
+        padding:$contentPadding;
+        border-radius:$contentBorderRadius;
+        color:$color;
+        font-size:$fontSize;
+        box-shadow:$boxShadow;
+    }
+
+    /* 下面的三角 */
+    .tooltip-arrow{
+        position:absolute;
+        width:0;
+        height:0;
+        border:solid transparent;
+    }
+
+    &.top, &.top-center, &.top-left, &.top-right{
+        .tooltip-arrow{
+            bottom:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:5px 5px 0;
+            border-top-color:$bgColor;
+        }
+    }
+    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+        .tooltip-arrow{
+            top:0;
+            left:50%;
+            margin-left:-5px;
+            border-width:0 5px 5px;
+            border-bottom-color:$bgColor;
+        }
+    }
+    // 向右
+    &.left{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            right:0;
+            border-width:5px 0 5px 5px;
+            border-left-color:$bgColor;
+        }
+    }
+
+    &.right{
+        .tooltip-arrow{
+            top:50%;
+            margin-top:-5px;
+            left:0;
+            border-width:5px 5px 5px 0;
+            border-right-color:$bgColor;
+        }
+    }
+}

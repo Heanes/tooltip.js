@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/**
+ * @doc 示例样式
+ * @author Heanes
+ * @time 2018-07-04 15:46:38 周三
+ */
+html, body {
+  margin: 0;
+  padding: 0; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+.demo-wrap {
+  margin: 0 auto;
+  padding: 20px;
+  position: relative; }
+  .demo-wrap .demo-item {
+    margin-bottom: 10px; }
+  .demo-wrap .demo-para {
+    background-color: #eee; }
+  .demo-wrap .demo-href {
+    padding: 10px;
+    background-color: #eee;
+    display: inline-block; }
+  .demo-wrap .demo-item-tooltip {
+    padding: 10px 0; }
+    .demo-wrap .demo-item-tooltip .btn {
+      margin-bottom: 10px;
+      margin-right: 10px; }
+  .demo-wrap .tooltip-left.btn {
+    margin-left: 100px; }
+  .demo-wrap .tooltip-right.btn {
+    margin-right: 100px; }
+  .demo-wrap .tooltip-top-left, .demo-wrap .tooltip-bottom-left {
+    margin-left: 50px; }
+  .demo-wrap .demo-tooltip-theme {
+    background-color: #eee;
+    margin: 20px auto;
+    padding: 50px; }
+
+/*# sourceMappingURL=demo.css.map */
