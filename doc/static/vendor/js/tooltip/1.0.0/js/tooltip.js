@@ -107,7 +107,7 @@
         },*/                                          // 动画效果对象配置形式
         trigger: 'hover',                           // 出现的触发事件
         keepShowWhenOnTip: true,                    // 当鼠标在tip内容上时保持显示，鼠标离开则自动隐藏
-        keepShowWhenClickTip: true,                 // 当鼠标点击tip内容时保持显示，即使鼠标移开，再点击一下将会取消一直显示
+        keepShowWhenClickTip: false,                // 当鼠标点击tip内容时保持显示(即使鼠标移开)，再点击一下将会取消一直显示
         cancelKeepShowWhenClickOtherPlace: false,   // 当鼠标点击非tooltip区域时取消一直显示
         positionOffset: undefined,                  // tooltip相对偏移位置，e.g:{top: 2px, left: 2px}，其值可为负数
         $container: false,                          // 放置展示tooltip的容器
@@ -296,12 +296,12 @@
                 if(_this.inState.show){
                     var $target = $(event.target);
                     var tipUId = _this.getTipUId();
-                    if($target !== $tip && $target.closest('#' + tipUId)[0] !== $tip[0]){
+                    if($target.is(_this.$element) && $target.is($tip) && $target.closest('#' + tipUId).is($tip)){
                         if(_this.inState.tipClick){
                             _this.inState.tipClick = false;
                             _this.inState.keepShow = false;
-                            if(_this.inState.show && !_this.inState.tipHover){
-                                _this.hideTipAction();
+                            if(!_this.inState.tipHover){
+                                _this.hide();
                             }
                         }
                     }
