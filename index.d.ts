@@ -1,7 +1,7 @@
-interface JQuery {
+interface jQuery {
 
-    tooltip(options: object): JQuery;
+    tooltip(options: object): jQuery;
 
-    tooltip(method: string, ...parameters: any[]): JQuery | any;
+    tooltip(method: string, ...parameters: any[]): jQuery | any;
 
 }

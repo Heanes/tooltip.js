@@ -2,9 +2,507 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>文档 - tooltip.js插件说明文档</title>
+
+    <link type="text/css" rel="stylesheet" href="//ui.heanes.com/dist/css/heanesUI.css">
+    <link type="text/css" rel="stylesheet" href="static/css/doc.css">
 </head>
 <body>
+<div class="main main-wrap">
+    <div class="page-title">
+        <h1 class="title">tooltip.js 文档说明</h1>
+    </div>
+    <div class="option-description">
+        <h2>配置参数说明</h2>
+        <p>表格的参数定义在 <code>jQuery.fn.tooltip.DEFAULTS</code>。</p>
+        <table class="table table-bordered table-hover table-striped table-option-description">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>配置项</th>
+                <th>标签项</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>可选值</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td>title</td>
+                <td>title</td>
+                <td>string</td>
+                <td>'Tooltip'</td>
+                <td>任意字符</td>
+                <td>显示的内容</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>enableHtml</td>
+                <td></td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>false:</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>true:</td>
+                            <td>是</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>tooltip内容，是否支持html</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>placement</td>
+                <td>data-tooltip-placement</td>
+                <td>string</td>
+                <td>'top-center'</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>'top':</td>
+                            <td>顶部居中</td>
+                        </tr>
+                        <tr>
+                            <td>'top-center':</td>
+                            <td>顶部居中</td>
+                        </tr>
+                        <tr>
+                            <td>'left':</td>
+                            <td>左侧</td>
+                        </tr>
+                        <tr>
+                            <td>'right':</td>
+                            <td>右侧</td>
+                        </tr>
+                        <tr>
+                            <td>'bottom':</td>
+                            <td>底部居中</td>
+                        </tr>
+                        <tr>
+                            <td>'bottom-center':</td>
+                            <td>底部居中</td>
+                        </tr>
+                        <tr>
+                            <td>'top-left':</td>
+                            <td>顶部居左</td>
+                        </tr>
+                        <tr>
+                            <td>'top-right':</td>
+                            <td>顶部居右</td>
+                        </tr>
+                        <tr>
+                            <td>'bottom-left':</td>
+                            <td>底部居左</td>
+                        </tr>
+                        <tr>
+                            <td>'bottom-right':</td>
+                            <td>底部居右</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>显示的位置</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>theme</td>
+                <td></td>
+                <td>string</td>
+                <td>string</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>'default':</td>
+                            <td>默认</td>
+                        </tr>
+                        <tr>
+                            <td>'white':</td>
+                            <td>白色</td>
+                        </tr>
+                        <tr>
+                            <td>'primary':</td>
+                            <td>primary主色系</td>
+                        </tr>
+                        <tr>
+                            <td>'info':</td>
+                            <td>info色系</td>
+                        </tr>
+                        <tr>
+                            <td>'warn':</td>
+                            <td>warn色系</td>
+                        </tr>
+                        <tr>
+                            <td>'danger':</td>
+                            <td>danger色系</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>样式风格</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>opacity</td>
+                <td>data-tooltip-opacity</td>
+                <td>number</td>
+                <td>1</td>
+                <td>任意数字</td>
+                <td>透明度</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>enableAnimation</td>
+                <td></td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>false:</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>true:</td>
+                            <td>是</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>是否使用动画效果</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>delay</td>
+                <td></td>
+                <td>object||number</td>
+                <td>
+                    <pre>
+{
+    show: 1000,
+    hide: 1000
+}
+</pre>
+                </td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>为object时:</td>
+                            <td>
+<pre>
+{
+    show: 1000,
+    hide: 1000
+}
+</pre>
+                                <p>其中<code>show</code>字段表示显示延时，</p>
+                                <p><code>hide</code>字段表示隐藏延时</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>为number时:</td>
+                            <td>任意数值，此时显示和隐藏的动画延时值相同，单位为毫秒</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>动画延时时间</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>animation</td>
+                <td></td>
+                <td>object||string</td>
+                <td>undefined</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>为object时:</td>
+                            <td>
+<pre>
+{
+    show: 'fadeIn',
+    hide: 'fadeOut'
+}
+</pre>
+                                <p>其中<code>show</code>字段表示显示动画效果，</p>
+                                <p><code>hide</code>字段表示隐藏动画效果</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>为string时:</td>
+                            <td>任意动画效果样式名，此时显示和隐藏的动画效果相同</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>动画效果的class名</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>trigger</td>
+                <td></td>
+                <td>string</td>
+                <td>'hover'</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>'hover':</td>
+                            <td>鼠标浮上</td>
+                        </tr>
+                        <tr>
+                            <td>'click':</td>
+                            <td>鼠标点击</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">或者其他自定义事件</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>触发显示的事件</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>keepShowWhenOnTip</td>
+                <td></td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>false:</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>true:</td>
+                            <td>是</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>当鼠标在tip内容上时保持显示，鼠标离开则取消保持显示</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>keepShowWhenClickTip</td>
+                <td></td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>false:</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>true:</td>
+                            <td>是</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>当鼠标点击tip内容时保持显示(即使鼠标移开)，再点击一下将会取消保持显示</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>cancelKeepShowWhenClickOtherPlace</td>
+                <td></td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>
+                    <table class="table table-condensed table-enum-option">
+                        <tbody>
+                        <tr>
+                            <td>false:</td>
+                            <td>否</td>
+                        </tr>
+                        <tr>
+                            <td>true:</td>
+                            <td>是</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>当鼠标点击非tooltip区域时取消一直显示</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>positionOffset</td>
+                <td></td>
+                <td>object</td>
+                <td>undefined</td>
+                <td>
+                    <pre>
+{
+    top: '2px',
+    left: '2px'
+}
+</pre>
+                    其中top表示向下偏移，left表示向右偏移
+                </td>
+                <td>tooltip相对偏移位置，e.g:{top: 2px, left: 2px}，其值可为负数</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>$container</td>
+                <td></td>
+                <td>jQuery object</td>
+                <td>undefined</td>
+                <td>任意存在的jQuery的dom对象</td>
+                <td>放置展示tooltip的容器，默认以body为容器</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>template</td>
+                <td></td>
+                <td>string</td>
+                <td>
+<pre>
+&lt;div class=&quot;tooltip-wrap&quot; role=&quot;tooltip&quot;&gt;
+    &lt;div class=&quot;tooltip-arrow&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
 
+            </tbody>
+        </table>
+    </div>
+    <div class="option-description">
+        <h2>事件</h2>
+        <table class="table table-bordered table-hover table-striped table-option-description">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>option事件</th>
+                <th>jQuery事件</th>
+                <th>参数</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>beforeShow</td>
+                <td>tooltip.beforeShow</td>
+                <td>$tip</td>
+                <td>
+                    <p>tooltip显示之前的事件</p>
+                    <p>$tip: tooltip的jQuery dom对象</p>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>afterShow</td>
+                <td>tooltip.afterShow</td>
+                <td>$tip</td>
+                <td>
+                    <p>tooltip显示之后的事件</p>
+                    <p>$tip: tooltip的jQuery dom对象</p>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>beforeHide</td>
+                <td>tooltip.beforeHide</td>
+                <td>$tip</td>
+                <td>
+                    <p>tooltip隐藏之前的事件</p>
+                    <p>$tip: tooltip的jQuery dom对象</p>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>afterHide</td>
+                <td>tooltip.afterHide</td>
+                <td>$tip</td>
+                <td>
+                    <p>tooltip隐藏之后的事件</p>
+                    <p>$tip: tooltip的jQuery dom对象</p>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>onToggle</td>
+                <td>tooltip.toggle</td>
+                <td>$tip</td>
+                <td>
+                    <p>tooltip切换显示、隐藏状态的事件</p>
+                    <p>$tip: tooltip的jQuery dom对象</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="option-description">
+        <h2>方法</h2>
+        <p>使用方法的语法：<code>$('#element').tooltip('method', parameter);</code>。</p>
+        <table class="table table-bordered table-hover table-striped table-option-description">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>名称</th>
+                <th>参数</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>show</td>
+                <td>无</td>
+                <td>
+                    使tooltip显示
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>hide</td>
+                <td>无</td>
+                <td>
+                    使tooltip隐藏
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>toggle</td>
+                <td>无</td>
+                <td>
+                    使tooltip切换显示、隐藏状态
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="demo-list">
+        <h2>示例</h2>
+        <p><a href="demo/normal.html" target="_blank">常规示例</a></p>
+    </div>
+
+    <div class="tooltip-wrap" role="tooltip">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner"></div>
+    </div>
+</div>
 </body>
 </html>
