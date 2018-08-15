@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="Heanes heanes.com email(heanes@163.com)">
+    <meta name="keywords" content="软件,商务,HTML,tutorials,source codes">
+    <meta name="description" content="描述">
+    <title>自动修正位置 - Tooltip示例</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="//cdn.heanes.com/public/static/image/favicon/favicon.ico"/>
+    <link rel="bookmark" href="//cdn.heanes.com/public/static/image/favicon/favicon.ico"/>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="//ui.heanes.com/dist/css/heanesUI.css">
+    <link rel="stylesheet" type="text/css" href="../../src/css/tooltip.css">
+    <!--<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">-->
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.heanes.com/css/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+<div class="main">
+    <div class="demo-wrap">
+        <div class="demo-group">
+            <div class="demo-content">
+                <div class="demo-item demo-item-tooltip tooltip-adapt-placement">
+                    <button class="btn btn-success tooltip-demo tooltip-placement-adapt-top" title="中上方tooltip">中上方</button>
+                    <button class="btn btn-success tooltip-demo tooltip-placement-adapt-left" title="左侧tooltip">左侧</button>
+                    <button class="btn btn-success tooltip-demo tooltip-placement-adapt-right" title="右侧tooltip">右侧</button>
+                    <button class="btn btn-success tooltip-demo tooltip-placement-adapt-right-enough-parent" title="右侧tooltip">右侧</button>
+                    <button class="btn btn-success tooltip-demo tooltip-placement-adapt-bottom" title="中下方tooltip">中下方</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="script-resource">
+    <script type="text/javascript" src="../static/vendor/js/jquery/2.2.4/jquery.2.2.4.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>-->
+    <script type="text/javascript" src="../../src/js/tooltip.js"></script>
+    <script type="application/javascript">
+        $(function () {
+            console.clear();
+            var $tooltipDemos = $('.tooltip-demo');
+            $tooltipDemos.tooltip({
+                placement: 'left'
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -57,5 +57,32 @@ p{
         margin:20px auto;
         padding:50px;
     }
+
+    .tooltip-adapt-placement{
+        position: relative;
+        padding: 0;
+        width: 900px;
+        height: 900px;
+        background-color: #eee;
+
+        .btn{
+            display: block;
+            margin-bottom: 50px;
+        }
+
+        .tooltip-placement-adapt-right{
+            position: absolute;
+            right: 0;
+        }
+        .tooltip-placement-adapt-right-enough-parent{
+            position: absolute;
+            right: 100px;
+            top: 50%;
+        }
+        .tooltip-placement-adapt-bottom{
+            position: absolute;
+            bottom: 0;
+        }
+    }
 }
 

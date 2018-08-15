@@ -39,5 +39,24 @@ p {
     background-color: #eee;
     margin: 20px auto;
     padding: 50px; }
+  .demo-wrap .tooltip-adapt-placement {
+    position: relative;
+    padding: 0;
+    width: 900px;
+    height: 900px;
+    background-color: #eee; }
+    .demo-wrap .tooltip-adapt-placement .btn {
+      display: block;
+      margin-bottom: 50px; }
+    .demo-wrap .tooltip-adapt-placement .tooltip-placement-adapt-right {
+      position: absolute;
+      right: 0; }
+    .demo-wrap .tooltip-adapt-placement .tooltip-placement-adapt-right-enough-parent {
+      position: absolute;
+      right: 100px;
+      top: 50%; }
+    .demo-wrap .tooltip-adapt-placement .tooltip-placement-adapt-bottom {
+      position: absolute;
+      bottom: 0; }
 
 /*# sourceMappingURL=demo.css.map */

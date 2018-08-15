@@ -8,6 +8,40 @@
     var tooltip = 'tooltip';
     var version = '1.0.0';
 
+    var _default = {
+        title: 'Tooltip',                           // tooltip内容，支持文本、dom内容。也可以从dom的data-original-title中取
+        enableHtml: false,                          // tooltip内容，是否支持html
+        placement: 'top-center',                    // 出现的位置，top-center, top-left, top-right, left, right, bottom-left, bottom-center, bottom-right
+        autoAdaptPlacement: true,                   // 是否自适应位置
+        theme: 'default',                           // 风格样式前缀
+        opacity: 1,                                 // 透明度
+        enableAnimation: true,                      // 是否启用动画效果
+        //delay: 1000,                              // 动画延时，单位为毫秒
+        delay: {
+            show: 1000,                             // 显示延时
+            hide: 1000                              // 隐藏延时
+        },                                          // tooltip显示隐藏动画延时时间，对象表示形式
+        animation: undefined,                       // 动画效果
+        /*animation: {
+            show: 'fadeIn',
+            hide: 'fadeOut',
+        },*/                                        // 动画效果对象配置形式
+        trigger: 'hover',                           // 出现的触发事件
+        keepShowWhenOnTip: true,                    // 当鼠标在tip内容上时保持显示，鼠标离开则取消保持显示
+        keepShowWhenClickTip: false,                // 当鼠标点击tip内容时保持显示(即使鼠标移开)，再点击一下将会取消保持显示
+        cancelKeepShowWhenClickOtherPlace: false,   // 当鼠标点击非tooltip区域时取消一直显示
+        positionOffset: undefined,                  // tooltip相对偏移位置，e.g:{top: 2px, left: 2px}，其值可为负数
+        $container: $('body'),                      // 放置展示tooltip的容器
+        template: '<div class="tooltip-wrap" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',  // tooltip模版
+
+        // Event
+        beforeShow: undefined,                      // 显示之前
+        afterShow: undefined,                       // 显示之后
+        beforeHide: undefined,                      // 消失之前
+        afterHide: undefined,                       // 消失之后
+        onToggle: undefined,                        // 切换显隐时
+    };
+
     $.fn.extend({
         animateCss: function(animationName, callback) {
             var animationEnd = (function(el) {
@@ -84,44 +118,17 @@
         };
     };
 
+    /**
+     * @doc 版本号
+     * @type {string}
+     */
     Tooltip.V = Tooltip.VERSION = version;
-    // Tooltip.name = tooltip;
+
     /**
      * @doc 默认选项
-     * @type object
+     * @type Object
      */
-    Tooltip.DEFAULTS = {
-        title: 'Tooltip',                           // tooltip内容，支持文本、dom内容。也可以从dom的data-original-title中取
-        enableHtml: false,                          // tooltip内容，是否支持html
-        placement: 'top-center',                    // 出现的位置，top-center, top-left, top-right, left, right, bottom-left, bottom-center, bottom-right
-        theme: 'default',                           // 风格样式前缀
-        opacity: 1,                                 // 透明度
-        enableAnimation: true,                      // 是否启用动画效果
-        //delay: 1000,                              // 动画延时，单位为毫秒
-        delay: {
-            show: 1000,                             // 显示延时
-            hide: 1000                              // 隐藏延时
-        },                                          // tooltip显示隐藏动画延时时间，对象表示形式
-        animation: undefined,                       // 动画效果
-        /*animation: {
-            show: 'fadeIn',
-            hide: 'fadeOut',
-        },*/                                        // 动画效果对象配置形式
-        trigger: 'hover',                           // 出现的触发事件
-        keepShowWhenOnTip: true,                    // 当鼠标在tip内容上时保持显示，鼠标离开则取消保持显示
-        keepShowWhenClickTip: false,                // 当鼠标点击tip内容时保持显示(即使鼠标移开)，再点击一下将会取消保持显示
-        cancelKeepShowWhenClickOtherPlace: false,   // 当鼠标点击非tooltip区域时取消一直显示
-        positionOffset: undefined,                  // tooltip相对偏移位置，e.g:{top: 2px, left: 2px}，其值可为负数
-        $container: undefined,                      // 放置展示tooltip的容器
-        template: '<div class="tooltip-wrap" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',  // tooltip模版
-
-        // Event
-        beforeShow: undefined,                      // 显示之前
-        afterShow: undefined,                       // 显示之后
-        beforeHide: undefined,                      // 消失之前
-        afterHide: undefined,                       // 消失之后
-        onToggle: undefined,                        // 切换显隐时
-    };
+    Tooltip.DEFAULTS = _default;
 
     /**
      * @doc 初始化
@@ -411,7 +418,7 @@
         options = options || this.options;
         var opacity = $element.attr('data-tooltip-opacity') || options.opacity || this.getDefaults().opacity;
         var $tip = this.tip();
-        $tip.addClass(this.options.theme);
+        $tip.addClass('tooltip-theme-' + this.options.theme);
         $tip.css({opacity: opacity});
         return this;
     };
@@ -515,29 +522,23 @@
      */
     Tooltip.prototype.getElementPosition = function ($element) {
         $element = $element || this.$element;
-        var position = $element.position();
-        /*console.group('elementPosition:');
-        console.log(position);
-        console.groupEnd();*/
+        var el     = $element[0];
 
-        var eleSize = this.getElementSize($element);
-        return $.extend({}, position, eleSize);
-    };
+        var isBody = el.tagName.toUpperCase() === 'BODY';
 
-    /**
-     * @doc 获取元素位置，去除外边框的位置
-     * @param $element
-     * @returns {*}
-     */
-    Tooltip.prototype.getElementPositionIgnoreMargin = function ($element) {
-        $element = $element || this.$element;
-        var positionIgnoreMargin = $element.offset();
-        /*console.group('ElementPositionIgnoreMargin:');
-        console.log(positionIgnoreMargin);
-        console.groupEnd();*/
+        var elRect    = el.getBoundingClientRect();
+        if (elRect.width == null) {
+            // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
+            elRect = $.extend({}, elRect, { width: elRect.right - elRect.left, height: elRect.bottom - elRect.top })
+        }
+        var isSvg = window.SVGElement && el instanceof window.SVGElement;
+        // Avoid using $.offset() on SVGs since it gives incorrect results in jQuery 3.
+        // See https://github.com/twbs/bootstrap/issues/20280
+        var elOffset  = isBody ? { top: 0, left: 0 } : (isSvg ? null : $element.offset());
+        var scroll    = { scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.scrollTop() };
+        var outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null;
 
-        var eleSize = this.getElementSize($element);
-        return $.extend({}, positionIgnoreMargin, eleSize);
+        return $.extend({}, elRect, scroll, outerDims, elOffset)
     };
 
     /**
@@ -546,30 +547,58 @@
      */
     Tooltip.prototype.setPosition = function ($element, position) {
         $element = $element || this.tip();
-        position = position || this.getElementPositionIgnoreMargin();
+        position = position || this.getElementPosition();
 
         var tipSize = this.getElementSize($element);
-        /*console.group('tipSize: ');
-        console.log(tipSize);
-        console.groupEnd();*/
 
-        var placement = this.getPlacement();
-        var positionSuitable = this.getSuitablePosition(placement, position, tipSize.width, tipSize.height);
-        /*console.group('positionSuitable: ');
-        console.log(positionSuitable);
-        console.groupEnd();*/
+        this.placement = this.getPlacement();
+        var positionSuitable = this.getSuitablePosition(this.placement, position, tipSize.width, tipSize.height);
 
         var options = this.options;
         // 位置偏移
         if(options.positionOffset && typeof options.positionOffset === 'object'){
             positionSuitable = this.setPositionOffset($element, positionSuitable);
         }
-
-        $element.css(positionSuitable);
-        $element.addClass(placement);
-
         this.tipPosition = positionSuitable;
 
+        // 位置确定后，再确定一下位置是否"合适"，不合适则修正
+        if(options.autoAdaptPlacement){
+            this.setPositionAutoAdapt(this.$element, position, tipSize);
+        }
+
+        $element.css({top: this.tipPosition.top, left: this.tipPosition.left});
+        $element.addClass('tooltip-placement-' + this.placement);
+
+        return this;
+    };
+
+    /**
+     * @doc 自动设置合适的位置
+     * @param $element
+     * @param position
+     * @param tipSize
+     * @returns {*}
+     */
+    Tooltip.prototype.setPositionAutoAdapt = function ($element, position, tipSize) {
+        $element = $element || this.$element;
+        // 0. 优先使用用户指定的位置，若不适应，则使用上方的位置，再使用右侧的位置，再使用下方位置，再使用左侧位置
+        // 判断方式：1.对于$element本身；2.对于tip
+        // 1. left值过于小，则说明太靠左侧。此时不能设置left位置，
+        // 2. right值(left值+元素宽度)大于容器宽度，则说明太靠右侧
+        // 3. top值小于0，则说明太靠顶部
+        // 4. bottom(top值+元素高度)大于容器宽度，则说明太靠底部
+        position = position || this.getElementPosition($element);
+        var tipPosition = this.tipPosition;
+        var adaptFlag = false;
+        var placement = this.placement;
+        var outerPosition = this.getElementPosition($('body'));
+        console.log('outerPosition', outerPosition);
+        this.placement = placement === 'top'    && position.top     - tipSize.height    < outerPosition.top     ? 'bottom'  :
+                         placement === 'bottom' && position.bottom  + tipSize.height    > outerPosition.bottom  ? 'top'     :
+                         placement === 'left'   && position.left    - tipSize.width     < outerPosition.left    ? 'right'   :
+                         placement === 'right'  && position.right   + tipSize.width     > outerPosition.right   ? 'left'    : placement;
+        this.tipPosition = this.getSuitablePosition(this.placement, position, tipSize.width, tipSize.height);
+        // 箭头偏移
         return this;
     };
 
@@ -583,8 +612,7 @@
         var options = this.options;
         position = position || this.getTipPosition();
 
-        var positionOld = {top: position.top, left: position.left};
-        return this.calculatePositionOffset(positionOld, -parseInt(options.positionOffset.left), -parseInt(options.positionOffset.top));
+        return this.calculatePositionOffset(position, parseInt(options.positionOffset.left), parseInt(options.positionOffset.top));
     };
 
     /**
@@ -620,7 +648,7 @@
      * @returns {{top: *, left: *}}
      */
     Tooltip.prototype.getSuitablePosition = function (placement, position, actualWidth, actualHeight) {
-        var positionSuitable = {};
+        var positionSuitable = $.extend({}, position);
         switch (placement){
             case 'top' || 'top-center':
                 positionSuitable.top = this.calculatePositionOffset(position, null, actualHeight).top;

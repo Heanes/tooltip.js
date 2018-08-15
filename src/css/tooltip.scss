@@ -12,7 +12,7 @@ $boxShadow: 0 0 9px 1px #d2d2d2;
 $contentPadding: 4px 8px;
 $contentBorderRadius: 4px;
 $fontSize: 13px;
-.tooltip-wrap.default{
+.tooltip-wrap.tooltip-theme-default{
     position:absolute;
     display:none;
     padding:$padding;
@@ -35,7 +35,7 @@ $fontSize: 13px;
         border:solid transparent;
     }
 
-    &.top, &.top-center, &.top-left, &.top-right{
+    &.tooltip-placement-top, &.tooltip-placement-top-center, &.tooltip-placement-top-left, &.tooltip-placement-top-right{
         .tooltip-arrow{
             bottom:0;
             left:50%;
@@ -44,7 +44,7 @@ $fontSize: 13px;
             border-top-color:$bgColor;
         }
     }
-    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+    &.tooltip-placement-bottom, &.tooltip-placement-bottom-center, &.tooltip-placement-bottom-left, &.tooltip-placement-bottom-right{
         .tooltip-arrow{
             top:0;
             left:50%;
@@ -54,7 +54,7 @@ $fontSize: 13px;
         }
     }
     // 向右
-    &.left{
+    &.tooltip-placement-left{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -64,7 +64,7 @@ $fontSize: 13px;
         }
     }
 
-    &.right{
+    &.tooltip-placement-right{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -79,7 +79,7 @@ $fontSize: 13px;
 $bgColor: #fff;
 $color: #333;
 $boxShadow: 0 0 9px 1px #d2d2d2;
-.tooltip-wrap.white{
+.tooltip-wrap.tooltip-theme-white{
     position:absolute;
     display:none;
     padding:$padding;
@@ -102,7 +102,7 @@ $boxShadow: 0 0 9px 1px #d2d2d2;
         border:solid transparent;
     }
 
-    &.top, &.top-center, &.top-left, &.top-right{
+    &.tooltip-placement-top, &.tooltip-placement-top-center, &.tooltip-placement-top-left, &.tooltip-placement-top-right{
         .tooltip-arrow{
             bottom:0;
             left:50%;
@@ -111,7 +111,7 @@ $boxShadow: 0 0 9px 1px #d2d2d2;
             border-top-color:$bgColor;
         }
     }
-    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+    &.tooltip-placement-bottom, &.tooltip-placement-bottom-center, &.tooltip-placement-bottom-left, &.tooltip-placement-bottom-right{
         .tooltip-arrow{
             top:0;
             left:50%;
@@ -121,7 +121,7 @@ $boxShadow: 0 0 9px 1px #d2d2d2;
         }
     }
     // 向右
-    &.left{
+    &.tooltip-placement-left{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -131,7 +131,7 @@ $boxShadow: 0 0 9px 1px #d2d2d2;
         }
     }
 
-    &.right{
+    &.tooltip-placement-right{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -144,7 +144,7 @@ $boxShadow: 0 0 9px 1px #d2d2d2;
 
 $bgColor:#428bca;
 $color:#fff;
-.tooltip-wrap.primary{
+.tooltip-wrap.tooltip-theme-primary{
     position:absolute;
     display:none;
     padding:$padding;
@@ -167,7 +167,7 @@ $color:#fff;
         border:solid transparent;
     }
 
-    &.top, &.top-center, &.top-left, &.top-right{
+    &.tooltip-placement-top, &.tooltip-placement-top-center, &.tooltip-placement-top-left, &.tooltip-placement-top-right{
         .tooltip-arrow{
             bottom:0;
             left:50%;
@@ -176,7 +176,7 @@ $color:#fff;
             border-top-color:$bgColor;
         }
     }
-    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+    &.tooltip-placement-bottom, &.tooltip-placement-bottom-center, &.tooltip-placement-bottom-left, &.tooltip-placement-bottom-right{
         .tooltip-arrow{
             top:0;
             left:50%;
@@ -186,7 +186,7 @@ $color:#fff;
         }
     }
     // 向右
-    &.left{
+    &.tooltip-placement-left{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -196,7 +196,7 @@ $color:#fff;
         }
     }
 
-    &.right{
+    &.tooltip-placement-right{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -209,7 +209,7 @@ $color:#fff;
 
 $bgColor:#5cb85c;
 $color:#fff;
-.tooltip-wrap.info{
+.tooltip-wrap.tooltip-theme-info{
     position:absolute;
     display:none;
     padding:$padding;
@@ -232,7 +232,7 @@ $color:#fff;
         border:solid transparent;
     }
 
-    &.top, &.top-center, &.top-left, &.top-right{
+    &.tooltip-placement-top, &.tooltip-placement-top-center, &.tooltip-placement-top-left, &.tooltip-placement-top-right{
         .tooltip-arrow{
             bottom:0;
             left:50%;
@@ -241,7 +241,7 @@ $color:#fff;
             border-top-color:$bgColor;
         }
     }
-    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+    &.tooltip-placement-bottom, &.tooltip-placement-bottom-center, &.tooltip-placement-bottom-left, &.tooltip-placement-bottom-right{
         .tooltip-arrow{
             top:0;
             left:50%;
@@ -251,7 +251,7 @@ $color:#fff;
         }
     }
     // 向右
-    &.left{
+    &.tooltip-placement-left{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -261,7 +261,7 @@ $color:#fff;
         }
     }
 
-    &.right{
+    &.tooltip-placement-right{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -274,7 +274,7 @@ $color:#fff;
 
 $bgColor:#f0ad4e;
 $color:#fff;
-.tooltip-wrap.warn{
+.tooltip-wrap.tooltip-theme-warn{
     position:absolute;
     display:none;
     padding:$padding;
@@ -297,7 +297,7 @@ $color:#fff;
         border:solid transparent;
     }
 
-    &.top, &.top-center, &.top-left, &.top-right{
+    &.tooltip-placement-top, &.tooltip-placement-top-center, &.tooltip-placement-top-left, &.tooltip-placement-top-right{
         .tooltip-arrow{
             bottom:0;
             left:50%;
@@ -306,7 +306,7 @@ $color:#fff;
             border-top-color:$bgColor;
         }
     }
-    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+    &.tooltip-placement-bottom, &.tooltip-placement-bottom-center, &.tooltip-placement-bottom-left, &.tooltip-placement-bottom-right{
         .tooltip-arrow{
             top:0;
             left:50%;
@@ -316,7 +316,7 @@ $color:#fff;
         }
     }
     // 向右
-    &.left{
+    &.tooltip-placement-left{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -326,7 +326,7 @@ $color:#fff;
         }
     }
 
-    &.right{
+    &.tooltip-placement-right{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -339,7 +339,7 @@ $color:#fff;
 
 $bgColor:#d9534f;
 $color:#fff;
-.tooltip-wrap.danger{
+.tooltip-wrap.tooltip-theme-danger{
     position:absolute;
     display:none;
     padding:$padding;
@@ -362,7 +362,7 @@ $color:#fff;
         border:solid transparent;
     }
 
-    &.top, &.top-center, &.top-left, &.top-right{
+    &.tooltip-placement-top, &.tooltip-placement-top-center, &.tooltip-placement-top-left, &.tooltip-placement-top-right{
         .tooltip-arrow{
             bottom:0;
             left:50%;
@@ -371,7 +371,7 @@ $color:#fff;
             border-top-color:$bgColor;
         }
     }
-    &.bottom, &.bottom-center, &.bottom-left, &.bottom-right{
+    &.tooltip-placement-bottom, &.tooltip-placement-bottom-center, &.tooltip-placement-bottom-left, &.tooltip-placement-bottom-right{
         .tooltip-arrow{
             top:0;
             left:50%;
@@ -381,7 +381,7 @@ $color:#fff;
         }
     }
     // 向右
-    &.left{
+    &.tooltip-placement-left{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;
@@ -391,7 +391,7 @@ $color:#fff;
         }
     }
 
-    &.right{
+    &.tooltip-placement-right{
         .tooltip-arrow{
             top:50%;
             margin-top:-5px;

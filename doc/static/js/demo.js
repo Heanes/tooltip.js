@@ -27,7 +27,7 @@ $(function () {
         keepShowWhenClickTip: false,                // 当鼠标点击tip内容时保持显示(即使鼠标移开)，再点击一下将会取消一直显示
         cancelKeepShowWhenClickOtherPlace: false,   // 当鼠标点击非tooltip区域时取消一直显示
         positionOffset: undefined,                  // tooltip相对偏移位置，e.g:{top: 2px, left: 2px}，其值可为负数
-        $container: false,                          // 放置展示tooltip的容器
+        //$container: false,                          // 放置展示tooltip的容器
         template: '<div class="tooltip-wrap" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',  // tooltip模版
 
         // Event
@@ -51,29 +51,29 @@ $(function () {
     var $tooltipOffset5 = $('.tooltip-offset-5');
     $tooltipOffset1.tooltip({
         positionOffset: {
-            top: '-10',
+            top: '10',
         },
     });
     $tooltipOffset2.tooltip({
         placement: 'bottom',
         positionOffset: {
-            top: '10',
+            top: '-10',
         },
     });
     $tooltipOffset3.tooltip({
         positionOffset: {
-            left: '-30',
+            left: '30',
         },
     });
     $tooltipOffset4.tooltip({
         positionOffset: {
-            left: '30',
+            left: '-30',
         },
     });
     $tooltipOffset5.tooltip({
         positionOffset: {
-            left: '30',
-            top: '10',
+            left: '-30',
+            top: '-10',
         },
     });
 
