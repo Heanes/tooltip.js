@@ -8,6 +8,8 @@
     var tooltip = 'tooltip';
     var version = '1.0.0';
 
+    var _tooltip = window.tooltip;
+
     var _default = {
         title: 'Tooltip',                           // tooltip内容，支持文本、dom内容。也可以从dom的data-original-title中取
         enableHtml: false,                          // tooltip内容，是否支持html
@@ -861,5 +863,8 @@
         });
         return result || this;
     };
+
+    $.fn.tooltip.Constructor = Tooltip;
+    $.fn.tooltip.defaults = Tooltip.DEFAULTS;
 
 })(jQuery, window, document);
