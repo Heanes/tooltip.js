@@ -1,6 +1,6 @@
 {
     "name": "tooltip.js",
-    "description": "An toolitp, show help information assistant",
+    "description": "An tooltip, show help information assistant",
     "version": "1.0.0",
     "main": "./dist/js/tooltip.js",
     "directories": {
@@ -19,7 +19,7 @@
     },
     "scripts": {
         "grunt": "grunt --gruntfile Gruntfile.js",
-        "lint": "eslint src/tooltip.js"
+        "lint": "eslint src/js/tooltip.js"
     },
     "repository": {
         "type": "git",
